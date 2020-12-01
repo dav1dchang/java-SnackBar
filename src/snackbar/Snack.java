@@ -10,9 +10,10 @@ public class Snack
     private double cost;
     private int quantity;
     private int vendingMachineId;
+    private String vendingMachineName;
 
     // constructor
-    public Snack(String name, double cost, int quantity, int vendingMachineId)
+    public Snack(String name, double cost, int quantity, int vendingMachineId, String vendingMachineName)
     {
         maxId++;
         id = maxId;
@@ -21,6 +22,7 @@ public class Snack
         this.cost = cost;
         this.quantity = quantity;
         this.vendingMachineId = vendingMachineId;
+        this.vendingMachineName = vendingMachineName;
     }
 
     // getters and setters
@@ -84,5 +86,14 @@ public class Snack
     public double totalCost(int quantityOfSnacks)
     {
         return this.cost * quantityOfSnacks;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Name: " + name +
+                "Vending Machine: " + vendingMachineName +
+                " Quantity on hand: " + quantity +
+                " Total cost of quantity on hand: " + cost * quantity;
     }
 }
